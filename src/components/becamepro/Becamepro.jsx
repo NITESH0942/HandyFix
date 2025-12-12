@@ -12,10 +12,11 @@ export const Becamepro = () => {
                 service to their customers.The best home service
                 professsionals use HandyFix to find jobs with no lead 
                 fees and flexible scheduling 
+                
             </p>
             <button className={styles.button}><Link to="/become-professional">Become a Pro</Link></button>
         </div>
-        
+
         <div className={styles.image}>
             <img src="./Becamepro/pro.png" alt="" />
         </div>
