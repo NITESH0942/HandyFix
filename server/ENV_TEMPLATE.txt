@@ -1,0 +1,51 @@
+# ============================================
+# .env FILE TEMPLATE FOR HOME SERVICE
+# ============================================
+# Copy this content to a file named ".env" in the server directory
+# Replace all placeholder values with your actual credentials
+# ============================================
+
+# Server Configuration
+PORT=5000
+NODE_ENV=development
+CLIENT_URL=http://localhost:5173
+
+# MongoDB Configuration
+MONGODB_URI=mongodb://localhost:27017/home-service
+
+# JWT Secret (Generate a random string for production)
+JWT_SECRET=your_super_secret_jwt_key_change_this_in_production
+
+# Google OAuth (Optional - only if using Google login)
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+
+# ============================================
+# VONAGE CREDENTIALS (Required for OTP)
+# ============================================
+
+# Step 1: Get from https://dashboard.nexmo.com/ → Settings → API Credentials
+VONAGE_API_KEY=your_vonage_api_key_here
+VONAGE_API_SECRET=your_vonage_api_secret_here
+
+# Step 2: Get from https://dashboard.nexmo.com/ → Numbers → Buy Numbers
+VONAGE_FROM_NUMBER=+1234567890
+
+# Step 3: Get from https://dashboard.nexmo.com/ → Applications → Create Application
+VONAGE_APPLICATION_ID=your_vonage_application_id_here
+
+# Step 4: Download Private Key from your Application page
+# Option A: Paste the entire key content here (with quotes if multi-line)
+VONAGE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY_CONTENT_HERE\n-----END PRIVATE KEY-----"
+
+# Step 5: Get WhatsApp Business Number (after WhatsApp setup approval)
+VONAGE_WHATSAPP_NUMBER=14155552671
+
+# ============================================
+# NOTES:
+# - For SMS only (no WhatsApp), you only need: VONAGE_API_KEY, VONAGE_API_SECRET, VONAGE_FROM_NUMBER
+# - WhatsApp requires approval from Vonage
+# - See VONAGE_CREDENTIALS_GUIDE.md for detailed step-by-step instructions
+# ============================================
+
+

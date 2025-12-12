@@ -1,0 +1,143 @@
+.blogContainer {
+  min-height: 100vh;
+  background: #f9fafb;
+  padding-top: 80px;
+}
+
+.blogHeader {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 20px 60px;
+  text-align: center;
+}
+
+.blogTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+.blogSubtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.blogContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.blogCard {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.blogCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.blogImage {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #e8e8e8;
+}
+
+.blogImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.blogCard:hover .blogImage img {
+  transform: scale(1.05);
+}
+
+.blogCardContent {
+  padding: 24px;
+}
+
+.blogCategory {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.blogCardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #1a1a2e;
+  line-height: 1.4;
+}
+
+.blogExcerpt {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.blogMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.blogDate {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.readMore {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.readMore:hover {
+  color: #764ba2;
+}
+
+@media (max-width: 768px) {
+  .blogTitle {
+    font-size: 2rem;
+  }
+
+  .blogSubtitle {
+    font-size: 1rem;
+  }
+
+  .blogGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .blogContent {
+    padding: 40px 20px;
+  }
+}
+
