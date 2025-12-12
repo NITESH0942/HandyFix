@@ -37,25 +37,83 @@
     font-family: var(--fonts-robot);
     /* font-size: 35px */
 }
-@media screen and (max-width: 830px) {
+/* Tablet */
+@media screen and (max-width: 1024px) {
     .container {
-        padding: 20px;
+        padding: 30px 20px;
+    }
+    .title {
+        font-size: 28px;
+    }
+    .logo {
+        width: 3%;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 25px 15px;
+        margin-top: 60px;
     }
     .content {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
     .title {
         font-size: 24px;
     }
     .logo {
-        width: 6%;
+        width: 5%;
     }
     .container a {
         font-size: 0.7rem;
     }
-    p {
+    .container p {
+        font-size: 0.75rem;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 20px 10px;
+        margin-top: 40px;
+    }
+    .content {
+        gap: 10px;
+    }
+    .title {
+        font-size: 20px;
+    }
+    .logo {
+        width: 6%;
+    }
+    .container a {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+    .container p {
         font-size: 0.7rem;
     }
-    
+}
+
+/* Small Mobile */
+@media screen and (max-width: 320px) {
+    .container {
+        padding: 15px 8px;
+    }
+    .title {
+        font-size: 18px;
+    }
+    .logo {
+        width: 8%;
+    }
+    .container a {
+        font-size: 0.6rem;
+    }
+    .container p {
+        font-size: 0.65rem;
+    }
 }

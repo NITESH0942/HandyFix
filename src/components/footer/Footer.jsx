@@ -1,5 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './footer.module.css';
+
 export const Footer = () => {
   return (
     <footer className={styles.container} id='contact'>
@@ -7,44 +9,44 @@ export const Footer = () => {
         <div className={styles.contentA}>
           <ul className={styles.contentAul}>
               <li><h3>The HandyFix happiness Guarantee</h3></li>
-              <li>About</li>
-              <li>Press</li>
-              <li>Careers</li>
-              <li>Blog</li>
-              <li>Help</li>
-              <li>Contact Us</li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/press">Press</Link></li>
+              <li><Link to="/careers">Careers</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/help">Help</Link></li>
+              <li><Link to="/contact">Contact Us</Link></li>
               <li></li>
               <li></li>
-              <li>Be a Professional</li>
-              <li>Retail Partnerships</li>
+              <li><Link to="/become-professional">Be a Professional</Link></li>
+              <li><Link to="/retail-partnerships">Retail Partnerships</Link></li>
           </ul>
         </div>
         <div className={styles.contentB}> 
           <ul className={styles.contentBul}>
              <li><h3>LOCATIONS</h3></li>
-             <li>Hyderabad</li>
-             <li>Bangaluru</li>
-             <li>Mumbai</li>
-             <li>Jaipur</li>
-             <li>Pune</li>
-             <li>Delhi</li>
-             <li>Gurgaon</li>
-             <li>Chennai</li>
-             <li>Lucknow</li>
+             <li><Link to="/locations/hyderabad">Hyderabad</Link></li>
+             <li><Link to="/locations/bangaluru">Bangaluru</Link></li>
+             <li><Link to="/locations/mumbai">Mumbai</Link></li>
+             <li><Link to="/locations/jaipur">Jaipur</Link></li>
+             <li><Link to="/locations/pune">Pune</Link></li>
+             <li><Link to="/locations/delhi">Delhi</Link></li>
+             <li><Link to="/locations/gurgaon">Gurgaon</Link></li>
+             <li><Link to="/locations/chennai">Chennai</Link></li>
+             <li><Link to="/locations/lucknow">Lucknow</Link></li>
           </ul>
         </div>
         <div>
           <ul>
              <li><h3>POPULAR SERVICES</h3></li>
-             <li>Cleaning</li>
-             <li>Plumbing</li>
-             <li>Electrical</li>
-             <li>HandyMan</li>
-             <li>Moving help</li>
-             <li>Painting</li>
-             <li>Furniture Assembly</li>
-             <li>Tv mounting</li>
-             <li>Hanging</li>
+             <li><Link to="/services/cleaning">Cleaning</Link></li>
+             <li><Link to="/services/plumbing">Plumbing</Link></li>
+             <li><Link to="/services/electrical">Electrical</Link></li>
+             <li><Link to="/services/handyman">HandyMan</Link></li>
+             <li><Link to="/services/moving">Moving help</Link></li>
+             <li><Link to="/services/painting">Painting</Link></li>
+             <li><Link to="/services/furniture-assembly">Furniture Assembly</Link></li>
+             <li><Link to="/services/tv-mounting">Tv mounting</Link></li>
+             <li><Link to="/services/hanging">Hanging</Link></li>
           </ul>
         </div>
       </div>
@@ -90,15 +92,15 @@ export const Footer = () => {
         </div>
       </div> 
       <hr  className={styles.hr}/>
-      <div className={styles.contentthree}>
+        <div className={styles.contentthree}>
         <ul className={styles.contentthreeul}>
-          <li>Contact</li>
-          <li>Privacy</li>
-          <li>CA Pre-collection Notice</li>
-          <li>Don't Sell or share my personal Information</li>
-          <li>Cookies</li>
-          <li>Terms</li>
-          <li>Cancellation Policy</li>
+          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/privacy">Privacy</Link></li>
+          <li><Link to="/ca-pre-collection">CA Pre-collection Notice</Link></li>
+          <li><Link to="/privacy#dont-sell">Don't Sell or share my personal Information</Link></li>
+          <li><Link to="/cookies">Cookies</Link></li>
+          <li><Link to="/terms">Terms</Link></li>
+          <li><Link to="/cancellation-policy">Cancellation Policy</Link></li>
           <li>2025 HandyFix All Rights Reserved</li>
         </ul>
       </div>

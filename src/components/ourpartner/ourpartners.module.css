@@ -52,10 +52,38 @@
     width: 7%;
 }
 
-@media screen and (max-width: 830px) {
+/* Tablet */
+@media screen and (max-width: 1024px) {
   .container {
-    padding: 20px;
+    padding: 100px 80px 40px 80px;
     height: auto;
+  }
+  .heading {
+    font-size: 26px;
+  }
+  .partnerone {
+    gap: 80px;
+  }
+  .partnertwo {
+    gap: 120px;
+  }
+  .content p {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 80px 40px 40px 40px;
+    height: auto;
+    margin-top: 80px;
+    margin-bottom: 100px;
+  }
+  .heading {
+    font-size: 24px;
+    padding-bottom: 30px;
   }
   .content {
     width: 100%;
@@ -63,15 +91,77 @@
     gap: 20px;
   }
   .partnerone, .partnertwo {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 30px;
   }
   .partnerone img, .partnertwo img, .eq {
-    width: 50%;
+    width: 30%;
+  }
+  .nl {
+    width: 10%;
   }
   .content p {
     padding-left: 20px;
     padding-right: 20px;
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 60px 20px 30px 20px;
+    margin-top: 60px;
+    margin-bottom: 80px;
+    gap: 20px;
+  }
+  .heading {
+    font-size: 22px;
+    padding-bottom: 25px;
+  }
+  .partnerone, .partnertwo {
+    gap: 20px;
+  }
+  .partnerone img, .partnertwo img, .eq {
+    width: 40%;
+  }
+  .nl {
+    width: 12%;
+  }
+  .content p {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 320px) {
+  .container {
+    padding: 50px 15px 25px 15px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    gap: 15px;
+  }
+  .heading {
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+  .partnerone, .partnertwo {
+    gap: 15px;
+  }
+  .partnerone img, .partnertwo img, .eq {
+    width: 45%;
+  }
+  .nl {
+    width: 15%;
+  }
+  .content p {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 0.85rem;
   }
 }
