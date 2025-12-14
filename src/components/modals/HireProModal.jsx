@@ -51,7 +51,8 @@ const HireProModal = ({ isOpen, onClose }) => {
         headers['Authorization'] = `Bearer ${token}`;
       }
 
-      const response = await fetch('http://localhost:5000/api/services/hire', {
+      const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+      const response = await fetch(`${API_BASE_URL}/services/hire`, {
         method: 'POST',
         headers,
         body: JSON.stringify({
