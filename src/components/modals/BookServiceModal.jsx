@@ -56,7 +56,8 @@ const BookServiceModal = ({ isOpen, onClose }) => {
 
   const fetchAvailableSlots = async (date) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/services/slots/${date}`);
+      const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+      const response = await fetch(`${API_BASE_URL}/services/slots/${date}`);
       const data = await response.json();
       if (data.success) {
         setAvailableSlots(data.availableSlots);
@@ -103,7 +104,8 @@ const BookServiceModal = ({ isOpen, onClose }) => {
         headers['Authorization'] = `Bearer ${token}`;
       }
 
-      const response = await fetch('http://localhost:5000/api/services/book', {
+      const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+      const response = await fetch(`${API_BASE_URL}/services/book`, {
         method: 'POST',
         headers,
         body: JSON.stringify({
