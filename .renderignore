@@ -1,0 +1,11 @@
+# Ignore frontend files when deploying backend
+package.json
+package-lock.json
+vite.config.js
+index.html
+src/
+public/
+dist/
+node_modules/
+home-service/
+
