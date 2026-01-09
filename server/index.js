@@ -6,6 +6,20 @@ import connectDB from './config/db.js';
 import configurePassport from './config/passport.js';
 import authRoutes from './routes/auth.js';
 import serviceRoutes from './routes/services.js';
+import {
+  securityHeaders,
+  corsConfig,
+  apiLimiter,
+  authLimiter,
+  otpLimiter,
+  ssrfProtection,
+  xssProtection,
+  requestSizeLimit,
+  additionalSecurityHeaders,
+  requestId,
+  securityLogger,
+  sriHeaders,
+} from './middleware/security.js';
 
 // Load environment variables
 dotenv.config();
@@ -33,38 +47,52 @@ if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET) {
   }, 100);
 }
 
-// Middleware
-// Support multiple origins for CORS (local dev + Netlify deployment)
-const allowedOrigins = [
-  'http://localhost:5173',
-  'http://localhost:3000',
-  process.env.CLIENT_URL,
-].filter(Boolean); // Remove undefined values
+// ============================================
+// Security Middleware (Order Matters!)
+// ============================================
 
-app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests with no origin (mobile apps, Postman, etc.)
-    if (!origin) return callback(null, true);
-    
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      // In production, you might want to be more strict
-      if (process.env.NODE_ENV === 'production') {
-        callback(new Error('Not allowed by CORS'));
-      } else {
-        callback(null, true); // Allow in development
-      }
-    }
-  },
-  credentials: true,
-}));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// 1. Request ID for tracking
+app.use(requestId);
+
+// 2. Security logging
+app.use(securityLogger);
+
+// 3. Security headers (Helmet)
+app.use(securityHeaders);
+
+// 4. Additional security headers
+app.use(additionalSecurityHeaders);
+
+// 5. SRI headers
+app.use(sriHeaders);
+
+// 6. CORS configuration (enhanced)
+app.use(cors(corsConfig));
+
+// 7. Body parsing with size limits
+app.use(express.json({ limit: requestSizeLimit.json }));
+app.use(express.urlencoded({ extended: true, limit: requestSizeLimit.urlencoded }));
+
+// 8. XSS Protection - Input sanitization
+app.use(xssProtection);
+
+// 9. SSRF Protection
+app.use(ssrfProtection);
+
+// 10. Rate limiting (general API)
+app.use('/api', apiLimiter);
+
+// 11. Passport initialization
 app.use(passport.initialize());
 
-// Routes
-app.use('/api/auth', authRoutes);
+// ============================================
+// Routes with Rate Limiting
+// ============================================
+
+// Auth routes with strict rate limiting
+app.use('/api/auth', authLimiter, authRoutes);
+
+// Service routes
 app.use('/api/services', serviceRoutes);
 
 // Health check route

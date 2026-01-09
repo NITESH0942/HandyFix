@@ -10,20 +10,25 @@ import {
 import { sendOTP, verifyOTP, resendOTP, sendExistingOTP } from '../controllers/otpController.js';
 import { protect } from '../middleware/auth.js';
 import { isGoogleOAuthConfigured } from '../config/passport.js';
+import { 
+  validationRules, 
+  handleValidationErrors,
+  otpLimiter 
+} from '../middleware/security.js';
 
 const router = express.Router();
 
-// Normal authentication routes
-router.post('/register', register);
-router.post('/login', login);
+// Normal authentication routes with validation
+router.post('/register', validationRules.register, handleValidationErrors, register);
+router.post('/login', validationRules.login, handleValidationErrors, login);
 router.get('/me', protect, getMe);
 router.put('/profile', protect, updateProfile);
 
-// Mobile OTP routes
-router.post('/send-otp', sendOTP);
-router.post('/verify-otp', verifyOTP);
-router.post('/resend-otp', resendOTP);
-router.post('/send-existing-otp', sendExistingOTP);
+// Mobile OTP routes with strict rate limiting and validation
+router.post('/send-otp', otpLimiter, validationRules.otp, handleValidationErrors, sendOTP);
+router.post('/verify-otp', validationRules.otp, handleValidationErrors, verifyOTP);
+router.post('/resend-otp', otpLimiter, validationRules.otp, handleValidationErrors, resendOTP);
+router.post('/send-existing-otp', otpLimiter, validationRules.otp, handleValidationErrors, sendExistingOTP);
 
 // Google OAuth routes
 router.get(
