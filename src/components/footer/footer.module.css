@@ -1,0 +1,268 @@
+@import '../../vars.css';
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: #1C1C1C;
+    color: rgb(230, 224, 224);
+    gap: 30px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 280px;
+}
+.contentA h3{
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(230, 224, 224);
+    font-family:var(--fonts-robot);
+}
+.content ul{
+    list-style-type:none;
+}
+.content ul li{
+    padding: 5px 0;
+    font-size: 14px;
+    color: rgb(230, 224, 224);
+}
+
+.content ul li a {
+    color: rgb(230, 224, 224);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.content ul li a:hover {
+    color: #667eea;
+    text-decoration: underline;
+}
+.contenttwo ul li{
+    padding: 5px 0;
+    font-size: 14px;
+    color: rgb(230, 224, 224);
+}
+
+.contenttwo ul li a {
+    color: rgb(230, 224, 224);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contenttwo ul li a:hover {
+    color: #667eea;
+    text-decoration: underline;
+}
+.contentone{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.contentone img{
+   width: 20%;
+   /* margin-left: 172px; */
+   padding-left: 5px;
+   gap: 10px;
+}
+.contentoneimgOne{
+    margin-left: 172px;
+}
+.contentoneimg{
+    display: flex;
+    flex-direction: row;
+    width: 15%;
+    height: 10%;
+    margin:5px 0 0 172px;
+}
+.contenthead{
+    padding-left: 185px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: var(--fonts-robot);
+}
+.contentother{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 290px;
+    padding-bottom: 10px;
+}
+.contentother ul{
+    list-style-type: none;
+    
+}
+.contentthree ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+.contentthree ul li{
+    margin: 0 7px;
+}
+
+.contentthree ul li a {
+    color: rgb(230, 224, 224);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 12px;
+}
+
+.contentthree ul li a:hover {
+    color: #667eea;
+    text-decoration: underline;
+}
+.contentfour{
+    text-align: center;
+}
+.hr{
+    border-top:1px solid rgb(180, 166, 166);
+    margin: 0 169px;
+}
+/* .contenttwo{
+    gap: 10px;
+} */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 50px 40px;
+    }
+    .content {
+        gap: 200px;
+    }
+    .contentother {
+        gap: 200px;
+    }
+    .contentoneimgOne {
+        margin-left: 100px;
+    }
+    .contentoneimg {
+        margin: 5px 0 0 100px;
+    }
+    .contenthead {
+        padding-left: 120px;
+    }
+    .hr {
+        margin: 0 100px;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 40px 20px;
+    }
+    .content {
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+    }
+    .contentother {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+    }
+    .contentone {
+        width: 100%;
+    }
+    .contentone img {
+        width: 25%;
+        margin-left: 0;
+    }
+    .contentoneimgOne {
+        margin-left: 0;
+    }
+    .contentoneimg {
+        margin: 5px 0 0 0;
+        width: 20%;
+    }
+    .contenthead {
+        padding-left: 0;
+    }
+    .contentA h3 {
+        font-size: 18px;
+    }
+    .content ul li, .contenttwo ul li {
+        font-size: 13px;
+    }
+    .hr {
+        margin: 0 20px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 30px 15px;
+        gap: 25px;
+    }
+    .content {
+        gap: 30px;
+    }
+    .contentother {
+        gap: 25px;
+    }
+    .contentone img {
+        width: 30%;
+    }
+    .contentoneimg {
+        width: 25%;
+    }
+    .contentA h3 {
+        font-size: 16px;
+    }
+    .content ul li, .contenttwo ul li {
+        font-size: 12px;
+        padding: 4px 0;
+    }
+    .contentthree ul li {
+        margin: 0 5px;
+    }
+    .hr {
+        margin: 0 15px;
+    }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 320px) {
+    .container {
+        padding: 25px 10px;
+        gap: 20px;
+    }
+    .content {
+        gap: 25px;
+    }
+    .contentother {
+        gap: 20px;
+    }
+    .contentone img {
+        width: 35%;
+    }
+    .contentoneimg {
+        width: 30%;
+    }
+    .contentA h3 {
+        font-size: 14px;
+    }
+    .content ul li, .contenttwo ul li {
+        font-size: 11px;
+        padding: 3px 0;
+    }
+    .contentthree ul {
+        flex-wrap: wrap;
+    }
+    .contentthree ul li {
+        margin: 5px;
+    }
+    .hr {
+        margin: 0 10px;
+    }
+}

@@ -1,0 +1,119 @@
+@import '../../vars.css';
+.container{
+    color: var(--color-text);
+    background-color: rgb(231, 241, 243);
+    margin-top: 80px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+.container a{
+    text-decoration: none;
+    color:rgb(27, 117, 227);
+    /* margin-top: 20px; */
+    font-size: .75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+}
+.container p{
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+}
+.logo{
+    width: 2%;
+    height: auto;
+    object-fit: cover;
+}
+.content{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 0.9rem;
+}
+.title{
+    padding-top: 6px;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: var(--fonts-robot);
+    /* font-size: 35px */
+}
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 30px 20px;
+    }
+    .title {
+        font-size: 28px;
+    }
+    .logo {
+        width: 3%;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 25px 15px;
+        margin-top: 60px;
+    }
+    .content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .title {
+        font-size: 24px;
+    }
+    .logo {
+        width: 5%;
+    }
+    .container a {
+        font-size: 0.7rem;
+    }
+    .container p {
+        font-size: 0.75rem;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 20px 10px;
+        margin-top: 40px;
+    }
+    .content {
+        gap: 10px;
+    }
+    .title {
+        font-size: 20px;
+    }
+    .logo {
+        width: 6%;
+    }
+    .container a {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+    .container p {
+        font-size: 0.7rem;
+    }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 320px) {
+    .container {
+        padding: 15px 8px;
+    }
+    .title {
+        font-size: 18px;
+    }
+    .logo {
+        width: 8%;
+    }
+    .container a {
+        font-size: 0.6rem;
+    }
+    .container p {
+        font-size: 0.65rem;
+    }
+}

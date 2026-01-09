@@ -1,0 +1,75 @@
+.pageContainer {
+  min-height: 100vh;
+  background: #f9fafb;
+  padding-top: 80px;
+}
+
+.pageHeader {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 60px 20px 40px;
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+.pageSubtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.pageContent {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.pageContent h2 {
+  color: #1a1a2e;
+  font-size: 1.8rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.pageContent h3 {
+  color: #1a1a2e;
+  font-size: 1.4rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.pageContent p {
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.pageContent ul, .pageContent ol {
+  margin: 20px 0;
+  padding-left: 30px;
+}
+
+.pageContent li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+
+  .pageSubtitle {
+    font-size: 1rem;
+  }
+
+  .pageContent {
+    padding: 40px 20px;
+  }
+}
+

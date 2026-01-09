@@ -1,0 +1,66 @@
+[
+    {
+        "title": "Home Cleaning",
+        "imageSrc":"servic/homeclean.png",
+        "description": "Professional cleaning services to keep your space spotless.",
+        "price": "$100.00-$500",
+        "category": "Cleaning"
+    },
+    
+    {
+        "title": "Plumbing",
+        "imageSrc":"servic/plumbingservice.png",
+        "description": "Reliable plumbing services for all your home needs.",
+        "price": "$60.00-$200",
+        "category": "Maintenance"
+    },
+    {
+        "title": "Electrical Repairs",
+        "imageSrc":"servic/electricalservice.png",
+        "description": "Certified electricians for safe and efficient electrical repairs.",
+        "price": "$50.00-$200",
+        "category": "Maintenance"
+    },
+    {
+        "title": "Furniture Assembly",
+        "imageSrc":"servic/furnitureass.png",
+        "description": "Professional furniture assembly services for your convenience.",
+        "price": "$120.00-$300",
+        "category": "Assembly"
+    },
+    {
+        "title": "Installation ",
+        "imageSrc":"servic/hang.png",
+        "description": "Expert Installation services like Ac,Geyser etc.",
+        "price": "$75.00-$300",
+        "category": "install"
+    },
+    {
+        "title":"TV Mounting Elect.",
+        "imageSrc":"servic/TVmount.png",
+        "description":"Professional TV mounting and Home theater AV setup etc.",
+        "price":"$50.00-$200",
+        "category":"Mounting"
+    },
+    {
+        "title":"General Handyman",
+        "imageSrc":"servic/Handymenservice.png",
+        "description":"Services Pictures Hanging,curtain and Blind install",
+        "price":"$50.00-$200",
+        "category":"General service"
+    },
+    {
+        "title":"Painting",
+        "imageSrc":"servic/paint.png",
+        "description":"Painting services Bedroom ,interior,Accent painting ",
+        "price":"$100.00-$1000*",
+        "category":"Painting"
+    },
+    {
+        "title":"Moving",
+        "imageSrc":"servic/move.jpg",
+        "description":"Moving services for your home or office.",
+        "price":"$100.00-$1000*",
+        "category":"Painting"
+    }
+]
