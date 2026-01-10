@@ -9,14 +9,12 @@ const OTPModal = ({ isOpen, onClose, mobile, isLogin, onSuccess }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [countdown, setCountdown] = useState(0);
-  const [ setCanResend] = useState(false);
   const inputRefs = useRef([]);
 
   useEffect(() => {
     if (isOpen && mobile) {
       // Start countdown when modal opens
       setCountdown(60);
-      setCanResend(false);
       setOtp(['', '', '', '', '', '']);
       setError('');
       setName('');
@@ -27,8 +25,6 @@ const OTPModal = ({ isOpen, onClose, mobile, isLogin, onSuccess }) => {
     if (countdown > 0) {
       const timer = setTimeout(() => setCountdown(countdown - 1), 1000);
       return () => clearTimeout(timer);
-    } else {
-      setCanResend(true);
     }
   }, [countdown]);
 
@@ -105,7 +101,6 @@ const OTPModal = ({ isOpen, onClose, mobile, isLogin, onSuccess }) => {
     setError('');
     setOtp(['', '', '', '', '', '']);
     setCountdown(60);
-    setCanResend(false);
 
     try {
       await authAPI.resendOTP(mobile);
