@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import  Services from '../../data/Services.json';
-import styles from './Service.module.css';
+import styles from './service.module.css';
 import { useAuth } from '../../context/AuthContext';
 import ServiceCard from './ServiceCard';
 import ServiceDetailModal from '../modals/ServiceDetailModal';
