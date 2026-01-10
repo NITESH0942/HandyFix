@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import styles from './Becamepro.module.css';
+import styles from './becamepro.module.css';
 export const Becamepro = () => {
   return (
     <section className={styles.container}>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useAuth } from '../../context/AuthContext';
-import { getImageUrl } from '../../util';
+// import { getImageUrl } from '../../util';
 import styles from './serviceDetail.module.css';
 
 const timeSlots = [
@@ -168,7 +168,7 @@ const ServiceDetailModal = ({ isOpen, onClose, service }) => {
       } else {
         setMessage({ type: 'error', text: data.message || 'Something went wrong' });
       }
-    } catch (error) {
+    } catch  {
       setMessage({ type: 'error', text: 'Failed to submit request. Please try again.' });
     } finally {
       setIsSubmitting(false);
