@@ -9,7 +9,7 @@ const OTPModal = ({ isOpen, onClose, mobile, isLogin, onSuccess }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [countdown, setCountdown] = useState(0);
-  const [canResend, setCanResend] = useState(false);
+  const [ setCanResend] = useState(false);
   const inputRefs = useRef([]);
 
   useEffect(() => {

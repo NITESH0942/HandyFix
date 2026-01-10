@@ -63,7 +63,7 @@ export const Login = () => {
       setShowModal(false);
       
       // In development mode, if OTP is returned, show it in console and alert
-      if (response.otp && process.env.NODE_ENV === 'development') {
+      if (response.otp && import.meta.env.DEV) {
         console.log(`📱 OTP for ${mobile}: ${response.otp}`);
         // Optionally show alert in development
         // alert(`Development Mode: OTP is ${response.otp}`);

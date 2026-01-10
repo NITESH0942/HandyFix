@@ -130,7 +130,7 @@ const BookServiceModal = ({ isOpen, onClose }) => {
       } else {
         setMessage({ type: 'error', text: data.message || 'Something went wrong' });
       }
-    } catch (error) {
+    } catch  {
       setMessage({ type: 'error', text: 'Failed to book service. Please try again.' });
     } finally {
       setIsSubmitting(false);
