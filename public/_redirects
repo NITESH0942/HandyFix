@@ -1,0 +1,4 @@
+# SPA fallback - redirect all routes to index.html
+# This is for Netlify deployment
+/*    /index.html   200
+

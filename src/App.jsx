@@ -26,6 +26,7 @@ import Cookies from './components/pages/Cookies';
 import CAPreCollection from './components/pages/CAPreCollection';
 import Location from './components/pages/Location';
 import ServicePage from './components/pages/Service';
+import NotFound from './components/pages/NotFound';
 import ScrollToTop from './components/ScrollToTop';
 
 // Home page component
@@ -65,6 +66,7 @@ export default function App() {
         <Route path="/ca-pre-collection" element={<CAPreCollection />} />
         <Route path="/locations/:city" element={<Location />} />
         <Route path="/services/:serviceName" element={<ServicePage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
