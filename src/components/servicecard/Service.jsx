@@ -12,6 +12,7 @@ export const Service = () => {
   const [showToast, setShowToast] = useState(false);
   const { user } = useAuth();
 
+  
   const handleServiceClick = (service) => {
     if (!user) {
       setShowToast(true);
