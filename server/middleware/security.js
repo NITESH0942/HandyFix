@@ -83,11 +83,10 @@ export const corsConfig = {
       process.env.CLIENT_URL,
     ].filter(Boolean);
 
-    // Allow requests with no origin (mobile apps, Postman, etc.) in development
+    // Allow requests with no origin (health checks, server-to-server, etc.)
+    // In production, allow no-origin for health checks and internal requests
     if (!origin) {
-      if (process.env.NODE_ENV === 'production') {
-        return callback(new Error('CORS: Origin header required in production'));
-      }
+      // Allow health check and internal API calls without origin
       return callback(null, true);
     }
 
@@ -95,7 +94,11 @@ export const corsConfig = {
       callback(null, true);
     } else {
       if (process.env.NODE_ENV === 'production') {
-        callback(new Error(`CORS: Origin ${origin} not allowed`));
+        // In production, log but still allow (you can make this stricter if needed)
+        console.warn(`⚠️  CORS: Unknown origin ${origin}, but allowing for now`);
+        callback(null, true);
+        // Uncomment below to make it stricter in production:
+        // callback(new Error(`CORS: Origin ${origin} not allowed`));
       } else {
         console.warn(`⚠️  CORS: Allowing origin ${origin} in development`);
         callback(null, true);
