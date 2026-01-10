@@ -2,9 +2,9 @@ services:
   - type: web
     name: home-service-backend
     env: node
-    rootDir: server
-    buildCommand: npm install
-    startCommand: npm start
+    rootDir: .
+    buildCommand: npm install && cd server && npm install && cd .. && npm run build && cp -r dist server/
+    startCommand: cd server && npm start
     healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
